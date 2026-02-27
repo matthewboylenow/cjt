@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { db } from "@/db";
 import { contactSubmissions, emailLog } from "@/db/schema";
-import { resend } from "@/lib/resend";
+import { getResend } from "@/lib/resend";
 import { contactFormSchema } from "@/lib/validations";
 
 export async function POST(request: Request) {
@@ -36,7 +36,7 @@ export async function POST(request: Request) {
     }`;
 
     try {
-      const { data: emailData, error } = await resend.emails.send({
+      const { data: emailData, error } = await getResend().emails.send({
         from: process.env.RESEND_FROM_EMAIL!,
         to: process.env.CONTACT_NOTIFICATION_EMAIL!,
         subject,
