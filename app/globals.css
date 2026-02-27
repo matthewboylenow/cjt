@@ -1,0 +1,164 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Brand Colors - derived from 2026 logo (cyan + bronze) */
+  --color-brand-navy: #0A1628;
+  --color-brand-navy-light: #0F2035;
+  --color-brand-cyan: #29ABE2;
+  --color-brand-cyan-light: #5CC5EE;
+  --color-brand-cyan-dark: #1B8AB5;
+  --color-brand-bronze: #8B7355;
+  --color-brand-bronze-light: #B8A88A;
+  --color-brand-bronze-dark: #6B5B42;
+
+  /* Surface Colors */
+  --color-surface-warm: #FAF9F6;
+  --color-surface-mist: #E2E8F0;
+  --color-surface-mist-dark: #CBD5E1;
+  --color-surface-cyan-tint: #E0F4FC;
+
+  /* Text Colors */
+  --color-text-primary: #1E293B;
+  --color-text-secondary: #6B7280;
+  --color-text-muted: #94A3B8;
+  --color-text-inverse: #FAF9F6;
+
+  /* Font families */
+  --font-heading: "Sora", sans-serif;
+  --font-body: "Outfit", sans-serif;
+
+  /* ShadCN required mappings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Outfit", sans-serif;
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #FAF9F6;
+  --foreground: #1E293B;
+  --card: #FFFFFF;
+  --card-foreground: #1E293B;
+  --popover: #FFFFFF;
+  --popover-foreground: #1E293B;
+  --primary: #0A1628;
+  --primary-foreground: #FAF9F6;
+  --secondary: #E2E8F0;
+  --secondary-foreground: #1E293B;
+  --muted: #F1F5F9;
+  --muted-foreground: #6B7280;
+  --accent: #29ABE2;
+  --accent-foreground: #FAF9F6;
+  --destructive: #DC2626;
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #29ABE2;
+  --chart-1: #29ABE2;
+  --chart-2: #8B7355;
+  --chart-3: #0A1628;
+  --chart-4: #6B7280;
+  --chart-5: #1E293B;
+  --sidebar: #0A1628;
+  --sidebar-foreground: #FAF9F6;
+  --sidebar-primary: #29ABE2;
+  --sidebar-primary-foreground: #FAF9F6;
+  --sidebar-accent: #0F2035;
+  --sidebar-accent-foreground: #FAF9F6;
+  --sidebar-border: #1E293B;
+  --sidebar-ring: #29ABE2;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-surface-warm text-text-primary antialiased;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Tiptap rendered content styles */
+.prose-cjt h2 {
+  @apply text-2xl font-bold text-brand-navy mb-4 mt-8;
+  font-family: var(--font-heading);
+}
+.prose-cjt h3 {
+  @apply text-xl font-semibold text-brand-navy mb-3 mt-6;
+  font-family: var(--font-heading);
+}
+.prose-cjt h4 {
+  @apply text-lg font-semibold text-text-primary mb-2 mt-4;
+  font-family: var(--font-heading);
+}
+.prose-cjt p {
+  @apply text-base leading-relaxed text-text-primary mb-4;
+}
+.prose-cjt ul {
+  @apply list-disc pl-6 mb-4 space-y-1;
+}
+.prose-cjt ol {
+  @apply list-decimal pl-6 mb-4 space-y-1;
+}
+.prose-cjt blockquote {
+  @apply border-l-4 border-brand-cyan pl-4 italic text-text-secondary my-4;
+}
+.prose-cjt a {
+  @apply text-brand-cyan underline hover:text-brand-cyan-dark transition-colors;
+}
+.prose-cjt strong {
+  @apply font-semibold;
+}
+.prose-cjt em {
+  @apply italic;
+}
+.prose-cjt s {
+  @apply line-through;
+}
+.prose-cjt u {
+  @apply underline;
+}

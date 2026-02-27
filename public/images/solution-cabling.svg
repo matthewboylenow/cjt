@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <pattern id="cab-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <circle cx="30" cy="30" r="0.8" fill="#1a2a44" opacity="0.8"/>
+    </pattern>
+    <radialGradient id="cab-glow" cx="40%" cy="55%" r="55%">
+      <stop offset="0%" stop-color="#152240"/>
+      <stop offset="100%" stop-color="#0A1628"/>
+    </radialGradient>
+    <linearGradient id="cab-line1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#29ABE2" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#29ABE2" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#29ABE2" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#29ABE2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cab-line2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="white" stop-opacity="0"/>
+      <stop offset="40%" stop-color="white" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="white" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#0A1628"/>
+  <rect width="800" height="500" fill="url(#cab-glow)"/>
+  <rect width="800" height="500" fill="url(#cab-grid)"/>
+
+  <!-- Structured cable runs - parallel flowing lines -->
+  <!-- Group 1 - top set -->
+  <path d="M 0 120 Q 200 120 300 160 T 500 180 T 800 140" fill="none" stroke="url(#cab-line2)" stroke-width="1.5"/>
+  <path d="M 0 130 Q 200 130 300 170 T 500 190 T 800 150" fill="none" stroke="url(#cab-line1)" stroke-width="2"/>
+  <path d="M 0 140 Q 200 140 300 180 T 500 200 T 800 160" fill="none" stroke="url(#cab-line2)" stroke-width="1"/>
+  <path d="M 0 150 Q 200 150 300 190 T 500 210 T 800 170" fill="none" stroke="url(#cab-line2)" stroke-width="1.5"/>
+
+  <!-- Group 2 - middle set -->
+  <path d="M 0 240 Q 150 235 280 250 T 520 260 T 800 245" fill="none" stroke="url(#cab-line2)" stroke-width="1"/>
+  <path d="M 0 250 Q 150 245 280 260 T 520 270 T 800 255" fill="none" stroke="url(#cab-line1)" stroke-width="2.5"/>
+  <path d="M 0 260 Q 150 255 280 270 T 520 280 T 800 265" fill="none" stroke="url(#cab-line2)" stroke-width="1.5"/>
+  <path d="M 0 270 Q 150 265 280 280 T 520 290 T 800 275" fill="none" stroke="url(#cab-line2)" stroke-width="1"/>
+
+  <!-- Group 3 - bottom set -->
+  <path d="M 0 360 Q 250 370 350 340 T 600 350 T 800 370" fill="none" stroke="url(#cab-line2)" stroke-width="1.5"/>
+  <path d="M 0 370 Q 250 380 350 350 T 600 360 T 800 380" fill="none" stroke="url(#cab-line2)" stroke-width="1"/>
+  <path d="M 0 380 Q 250 390 350 360 T 600 370 T 800 390" fill="none" stroke="url(#cab-line1)" stroke-width="2"/>
+  <path d="M 0 390 Q 250 400 350 370 T 600 380 T 800 400" fill="none" stroke="url(#cab-line2)" stroke-width="1"/>
+
+  <!-- Left patch panel -->
+  <rect x="80" y="140" width="12" height="180" rx="2" fill="#0A1628" stroke="#29ABE2" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="86" cy="160" r="3" fill="#29ABE2" opacity="0.5"/>
+  <circle cx="86" cy="180" r="3" fill="white" opacity="0.3"/>
+  <circle cx="86" cy="200" r="3" fill="#29ABE2" opacity="0.5"/>
+  <circle cx="86" cy="220" r="3" fill="white" opacity="0.3"/>
+  <circle cx="86" cy="240" r="3" fill="#29ABE2" opacity="0.5"/>
+  <circle cx="86" cy="260" r="3" fill="white" opacity="0.3"/>
+  <circle cx="86" cy="280" r="3" fill="#29ABE2" opacity="0.5"/>
+  <circle cx="86" cy="300" r="3" fill="white" opacity="0.3"/>
+
+  <!-- Right patch panel -->
+  <rect x="708" y="140" width="12" height="180" rx="2" fill="#0A1628" stroke="#29ABE2" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="714" cy="160" r="3" fill="white" opacity="0.3"/>
+  <circle cx="714" cy="180" r="3" fill="#29ABE2" opacity="0.5"/>
+  <circle cx="714" cy="200" r="3" fill="white" opacity="0.3"/>
+  <circle cx="714" cy="220" r="3" fill="#29ABE2" opacity="0.5"/>
+  <circle cx="714" cy="240" r="3" fill="white" opacity="0.3"/>
+  <circle cx="714" cy="260" r="3" fill="#29ABE2" opacity="0.5"/>
+  <circle cx="714" cy="280" r="3" fill="white" opacity="0.3"/>
+  <circle cx="714" cy="300" r="3" fill="#29ABE2" opacity="0.5"/>
+
+  <!-- Central junction point -->
+  <rect x="375" y="210" width="50" height="80" rx="4" fill="none" stroke="white" stroke-width="1.5" opacity="0.3"/>
+  <rect x="380" y="215" width="40" height="70" rx="2" fill="#0A1628" stroke="#29ABE2" stroke-width="1" opacity="0.5"/>
+  <!-- RJ45-like port indicators -->
+  <rect x="388" y="225" width="24" height="8" rx="1" fill="#29ABE2" opacity="0.3"/>
+  <rect x="388" y="240" width="24" height="8" rx="1" fill="white" opacity="0.1"/>
+  <rect x="388" y="255" width="24" height="8" rx="1" fill="#29ABE2" opacity="0.3"/>
+  <rect x="388" y="270" width="24" height="8" rx="1" fill="white" opacity="0.1"/>
+
+  <!-- Decorative corner brackets -->
+  <path d="M 30 30 L 80 30 M 30 30 L 30 80" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 770 30 L 720 30 M 770 30 L 770 80" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 30 470 L 80 470 M 30 470 L 30 420" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 770 470 L 720 470 M 770 470 L 770 420" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Floating geometric accents -->
+  <rect x="180" y="60" width="30" height="30" rx="2" fill="none" stroke="white" stroke-width="0.5" opacity="0.12" transform="rotate(15, 195, 75)"/>
+  <rect x="590" y="410" width="25" height="25" rx="2" fill="none" stroke="#29ABE2" stroke-width="0.5" opacity="0.2" transform="rotate(-10, 602, 422)"/>
+
+  <!-- Small detail dots -->
+  <circle cx="250" cy="440" r="2" fill="white" opacity="0.12"/>
+  <circle cx="550" cy="60" r="2" fill="#29ABE2" opacity="0.25"/>
+  <circle cx="400" cy="440" r="1.5" fill="white" opacity="0.1"/>
+  <circle cx="650" cy="100" r="1.5" fill="#29ABE2" opacity="0.2"/>
+</svg>

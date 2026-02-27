@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <pattern id="ms-dots" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="0.6" fill="#1a2a44"/>
+    </pattern>
+    <radialGradient id="ms-glow" cx="55%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#152240"/>
+      <stop offset="100%" stop-color="#0A1628"/>
+    </radialGradient>
+    <linearGradient id="ms-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#29ABE2" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#29ABE2" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#0A1628"/>
+  <rect width="800" height="500" fill="url(#ms-glow)"/>
+  <rect width="800" height="500" fill="url(#ms-dots)" opacity="0.7"/>
+
+  <!-- Large envelope shape - abstract/geometric -->
+  <!-- Envelope body -->
+  <rect x="250" y="160" width="300" height="200" rx="4" fill="none" stroke="white" stroke-width="2" opacity="0.3"/>
+  <rect x="255" y="165" width="290" height="190" rx="2" fill="#29ABE2" opacity="0.04"/>
+
+  <!-- Envelope flap - V shape -->
+  <path d="M 250 160 L 400 275 L 550 160" fill="none" stroke="#29ABE2" stroke-width="2.5" opacity="0.6"/>
+  <path d="M 250 360 L 370 270 M 550 360 L 430 270" fill="none" stroke="white" stroke-width="1" opacity="0.15"/>
+
+  <!-- Inner highlight triangle -->
+  <path d="M 260 165 L 400 265 L 540 165 Z" fill="#29ABE2" opacity="0.06"/>
+
+  <!-- Stacked message indicators behind main envelope -->
+  <rect x="235" y="150" width="300" height="200" rx="4" fill="none" stroke="white" stroke-width="0.8" opacity="0.1"/>
+  <rect x="220" y="140" width="300" height="200" rx="4" fill="none" stroke="white" stroke-width="0.5" opacity="0.06"/>
+
+  <!-- Notification badge -->
+  <circle cx="540" cy="170" r="18" fill="#29ABE2" opacity="0.7"/>
+  <circle cx="540" cy="170" r="22" fill="none" stroke="#29ABE2" stroke-width="1" opacity="0.3"/>
+  <text x="540" y="176" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle" opacity="0.9">3</text>
+
+  <!-- Floating document/email icons - small abstract representations -->
+  <!-- Top left floating card -->
+  <rect x="100" y="100" width="60" height="40" rx="3" fill="none" stroke="white" stroke-width="1" opacity="0.15"/>
+  <line x1="110" y1="115" x2="150" y2="115" stroke="white" stroke-width="0.8" opacity="0.1"/>
+  <line x1="110" y1="125" x2="140" y2="125" stroke="white" stroke-width="0.8" opacity="0.08"/>
+
+  <!-- Top right floating card -->
+  <rect x="640" y="80" width="60" height="40" rx="3" fill="none" stroke="#29ABE2" stroke-width="1" opacity="0.2"/>
+  <line x1="650" y1="95" x2="690" y2="95" stroke="#29ABE2" stroke-width="0.8" opacity="0.15"/>
+  <line x1="650" y1="105" x2="680" y2="105" stroke="#29ABE2" stroke-width="0.8" opacity="0.12"/>
+
+  <!-- Bottom left floating card -->
+  <rect x="120" y="360" width="55" height="35" rx="3" fill="none" stroke="white" stroke-width="0.8" opacity="0.12"/>
+  <line x1="128" y1="373" x2="168" y2="373" stroke="white" stroke-width="0.6" opacity="0.08"/>
+
+  <!-- Bottom right floating card -->
+  <rect x="630" y="370" width="55" height="35" rx="3" fill="none" stroke="#29ABE2" stroke-width="0.8" opacity="0.18"/>
+  <line x1="638" y1="383" x2="678" y2="383" stroke="#29ABE2" stroke-width="0.6" opacity="0.12"/>
+
+  <!-- Connection lines from floating cards to center -->
+  <line x1="160" y1="130" x2="280" y2="200" stroke="white" stroke-width="0.5" opacity="0.08" stroke-dasharray="4,4"/>
+  <line x1="640" y1="110" x2="520" y2="190" stroke="#29ABE2" stroke-width="0.5" opacity="0.1" stroke-dasharray="4,4"/>
+  <line x1="175" y1="370" x2="290" y2="330" stroke="white" stroke-width="0.5" opacity="0.08" stroke-dasharray="4,4"/>
+  <line x1="630" y1="380" x2="520" y2="340" stroke="#29ABE2" stroke-width="0.5" opacity="0.1" stroke-dasharray="4,4"/>
+
+  <!-- Calendar grid overlay - subtle -->
+  <g opacity="0.06">
+    <rect x="580" y="200" width="140" height="120" rx="4" fill="none" stroke="white" stroke-width="1"/>
+    <line x1="580" y1="225" x2="720" y2="225" stroke="white" stroke-width="0.5"/>
+    <line x1="615" y1="225" x2="615" y2="320" stroke="white" stroke-width="0.5"/>
+    <line x1="650" y1="225" x2="650" y2="320" stroke="white" stroke-width="0.5"/>
+    <line x1="685" y1="225" x2="685" y2="320" stroke="white" stroke-width="0.5"/>
+    <line x1="580" y1="255" x2="720" y2="255" stroke="white" stroke-width="0.5"/>
+    <line x1="580" y1="285" x2="720" y2="285" stroke="white" stroke-width="0.5"/>
+  </g>
+
+  <!-- Productivity circles - abstract -->
+  <circle cx="100" cy="250" r="35" fill="none" stroke="white" stroke-width="0.8" opacity="0.08"/>
+  <circle cx="100" cy="250" r="25" fill="none" stroke="#29ABE2" stroke-width="0.5" opacity="0.1"/>
+  <path d="M 75 250 A 25 25 0 0 1 125 250" fill="none" stroke="#29ABE2" stroke-width="2" opacity="0.2"/>
+
+  <!-- Decorative corner brackets -->
+  <path d="M 30 30 L 80 30 M 30 30 L 30 80" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 770 30 L 720 30 M 770 30 L 770 80" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 30 470 L 80 470 M 30 470 L 30 420" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 770 470 L 720 470 M 770 470 L 770 420" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Scattered particles -->
+  <circle cx="300" cy="80" r="1.5" fill="white" opacity="0.12"/>
+  <circle cx="500" cy="440" r="2" fill="#29ABE2" opacity="0.2"/>
+  <circle cx="700" cy="300" r="1.5" fill="white" opacity="0.1"/>
+  <circle cx="180" cy="450" r="2" fill="#29ABE2" opacity="0.15"/>
+  <circle cx="400" cy="430" r="1.5" fill="white" opacity="0.08"/>
+</svg>

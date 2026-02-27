@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <pattern id="aws-grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#1a2a44" stroke-width="0.3"/>
+    </pattern>
+    <radialGradient id="aws-glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#162545"/>
+      <stop offset="100%" stop-color="#0A1628"/>
+    </radialGradient>
+    <linearGradient id="aws-fade-up" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#29ABE2" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#29ABE2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#0A1628"/>
+  <rect width="800" height="500" fill="url(#aws-glow)"/>
+  <rect width="800" height="500" fill="url(#aws-grid)" opacity="0.5"/>
+
+  <!-- Rising gradient base -->
+  <rect x="100" y="250" width="600" height="200" fill="url(#aws-fade-up)" rx="4"/>
+
+  <!-- Main cloud shape - composed of overlapping circles -->
+  <ellipse cx="400" cy="210" rx="120" ry="70" fill="none" stroke="white" stroke-width="2" opacity="0.25"/>
+  <ellipse cx="330" cy="230" rx="80" ry="55" fill="none" stroke="white" stroke-width="1.5" opacity="0.2"/>
+  <ellipse cx="470" cy="230" rx="85" ry="58" fill="none" stroke="white" stroke-width="1.5" opacity="0.2"/>
+  <ellipse cx="400" cy="250" rx="140" ry="50" fill="none" stroke="#29ABE2" stroke-width="2" opacity="0.4"/>
+
+  <!-- Inner cloud detail - geometric fill -->
+  <ellipse cx="400" cy="220" rx="90" ry="45" fill="#29ABE2" opacity="0.06"/>
+
+  <!-- Cloud internal structure - horizontal layers -->
+  <line x1="320" y1="200" x2="480" y2="200" stroke="white" stroke-width="0.5" opacity="0.15"/>
+  <line x1="330" y1="215" x2="470" y2="215" stroke="white" stroke-width="0.5" opacity="0.12"/>
+  <line x1="310" y1="230" x2="490" y2="230" stroke="white" stroke-width="0.5" opacity="0.15"/>
+  <line x1="325" y1="245" x2="475" y2="245" stroke="#29ABE2" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Upload/download arrows - abstract data flow -->
+  <!-- Arrow up left -->
+  <line x1="280" y1="380" x2="340" y2="280" stroke="white" stroke-width="1.5" opacity="0.2"/>
+  <polygon points="337,288 345,275 332,280" fill="white" opacity="0.3"/>
+
+  <!-- Arrow up center -->
+  <line x1="400" y1="400" x2="400" y2="300" stroke="#29ABE2" stroke-width="2" opacity="0.4"/>
+  <polygon points="400,300 393,315 407,315" fill="#29ABE2" opacity="0.5"/>
+
+  <!-- Arrow up right -->
+  <line x1="520" y1="380" x2="460" y2="280" stroke="white" stroke-width="1.5" opacity="0.2"/>
+  <polygon points="463,288 455,275 468,280" fill="white" opacity="0.3"/>
+
+  <!-- Ground-level infrastructure blocks -->
+  <rect x="240" y="390" width="80" height="45" rx="3" fill="none" stroke="white" stroke-width="1" opacity="0.2"/>
+  <rect x="245" y="395" width="70" height="10" rx="1" fill="white" opacity="0.06"/>
+  <rect x="245" y="410" width="70" height="10" rx="1" fill="#29ABE2" opacity="0.1"/>
+  <rect x="245" y="425" width="70" height="5" rx="1" fill="white" opacity="0.04"/>
+
+  <rect x="360" y="410" width="80" height="45" rx="3" fill="none" stroke="#29ABE2" stroke-width="1" opacity="0.3"/>
+  <rect x="365" y="415" width="70" height="10" rx="1" fill="#29ABE2" opacity="0.1"/>
+  <rect x="365" y="430" width="70" height="10" rx="1" fill="white" opacity="0.06"/>
+  <rect x="365" y="445" width="70" height="5" rx="1" fill="#29ABE2" opacity="0.08"/>
+
+  <rect x="480" y="390" width="80" height="45" rx="3" fill="none" stroke="white" stroke-width="1" opacity="0.2"/>
+  <rect x="485" y="395" width="70" height="10" rx="1" fill="white" opacity="0.06"/>
+  <rect x="485" y="410" width="70" height="10" rx="1" fill="white" opacity="0.04"/>
+  <rect x="485" y="425" width="70" height="5" rx="1" fill="#29ABE2" opacity="0.1"/>
+
+  <!-- Orbiting satellite elements -->
+  <ellipse cx="400" cy="190" rx="180" ry="100" fill="none" stroke="white" stroke-width="0.5" opacity="0.08" transform="rotate(-5, 400, 190)"/>
+  <ellipse cx="400" cy="190" rx="210" ry="115" fill="none" stroke="#29ABE2" stroke-width="0.5" opacity="0.06" transform="rotate(5, 400, 190)"/>
+
+  <!-- Small orbiting dots -->
+  <circle cx="220" cy="160" r="4" fill="#29ABE2" opacity="0.5"/>
+  <circle cx="580" cy="170" r="3" fill="white" opacity="0.3"/>
+  <circle cx="250" cy="270" r="3" fill="white" opacity="0.2"/>
+  <circle cx="550" cy="260" r="4" fill="#29ABE2" opacity="0.35"/>
+
+  <!-- Decorative corner brackets -->
+  <path d="M 30 30 L 80 30 M 30 30 L 30 80" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 770 30 L 720 30 M 770 30 L 770 80" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 30 470 L 80 470 M 30 470 L 30 420" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 770 470 L 720 470 M 770 470 L 770 420" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Ambient particles -->
+  <circle cx="130" cy="100" r="1.5" fill="white" opacity="0.12"/>
+  <circle cx="670" cy="400" r="2" fill="#29ABE2" opacity="0.2"/>
+  <circle cx="700" cy="120" r="1.5" fill="white" opacity="0.1"/>
+  <circle cx="100" cy="350" r="2" fill="#29ABE2" opacity="0.15"/>
+
+  <!-- Subtle hex accents top-right -->
+  <polygon points="680,70 700,58 720,70 720,94 700,106 680,94" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/>
+  <polygon points="650,90 670,78 690,90 690,114 670,126 650,114" fill="none" stroke="white" stroke-width="0.3" opacity="0.07"/>
+</svg>

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <pattern id="net-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a2a44" stroke-width="0.5"/>
+    </pattern>
+    <radialGradient id="net-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a2a44"/>
+      <stop offset="100%" stop-color="#0A1628"/>
+    </radialGradient>
+    <linearGradient id="net-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#29ABE2" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#29ABE2" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#0A1628"/>
+  <rect width="800" height="500" fill="url(#net-glow)"/>
+  <rect width="800" height="500" fill="url(#net-grid)" opacity="0.6"/>
+
+  <!-- Subtle diagonal lines -->
+  <line x1="0" y1="500" x2="800" y2="0" stroke="#1a2a44" stroke-width="1" opacity="0.4"/>
+  <line x1="100" y1="500" x2="800" y2="50" stroke="#1a2a44" stroke-width="0.5" opacity="0.3"/>
+  <line x1="-100" y1="500" x2="700" y2="0" stroke="#1a2a44" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Central hub - large hexagon -->
+  <polygon points="400,180 445,205 445,255 400,280 355,255 355,205" fill="none" stroke="#29ABE2" stroke-width="2.5" opacity="0.9"/>
+  <polygon points="400,195 430,212 430,248 400,265 370,248 370,212" fill="#29ABE2" opacity="0.15"/>
+
+  <!-- Inner detail of hub -->
+  <circle cx="400" cy="230" r="12" fill="none" stroke="white" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="400" cy="230" r="5" fill="white" opacity="0.5"/>
+
+  <!-- Node 1 - top left -->
+  <rect x="195" y="95" width="50" height="50" rx="6" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+  <rect x="205" y="105" width="30" height="30" rx="3" fill="#29ABE2" opacity="0.2"/>
+  <line x1="210" y1="115" x2="230" y2="115" stroke="white" stroke-width="1" opacity="0.4"/>
+  <line x1="210" y1="122" x2="225" y2="122" stroke="white" stroke-width="1" opacity="0.3"/>
+  <line x1="210" y1="129" x2="228" y2="129" stroke="white" stroke-width="1" opacity="0.4"/>
+
+  <!-- Node 2 - top right -->
+  <rect x="555" y="95" width="50" height="50" rx="6" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+  <rect x="565" y="105" width="30" height="30" rx="3" fill="#29ABE2" opacity="0.2"/>
+  <line x1="570" y1="115" x2="590" y2="115" stroke="white" stroke-width="1" opacity="0.4"/>
+  <line x1="570" y1="122" x2="585" y2="122" stroke="white" stroke-width="1" opacity="0.3"/>
+  <line x1="570" y1="129" x2="588" y2="129" stroke="white" stroke-width="1" opacity="0.4"/>
+
+  <!-- Node 3 - bottom left -->
+  <rect x="145" y="320" width="50" height="50" rx="6" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+  <rect x="155" y="330" width="30" height="30" rx="3" fill="#29ABE2" opacity="0.2"/>
+  <circle cx="170" cy="345" r="8" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+
+  <!-- Node 4 - bottom right -->
+  <rect x="605" y="320" width="50" height="50" rx="6" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+  <rect x="615" y="330" width="30" height="30" rx="3" fill="#29ABE2" opacity="0.2"/>
+  <circle cx="630" cy="345" r="8" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+
+  <!-- Node 5 - far left -->
+  <rect x="60" y="200" width="50" height="50" rx="6" fill="none" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <rect x="70" y="210" width="30" height="30" rx="3" fill="white" opacity="0.05"/>
+
+  <!-- Node 6 - far right -->
+  <rect x="690" y="200" width="50" height="50" rx="6" fill="none" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <rect x="700" y="210" width="30" height="30" rx="3" fill="white" opacity="0.05"/>
+
+  <!-- Connection lines from hub to nodes -->
+  <line x1="360" y1="210" x2="245" y2="130" stroke="white" stroke-width="1" opacity="0.25"/>
+  <line x1="440" y1="210" x2="555" y2="130" stroke="white" stroke-width="1" opacity="0.25"/>
+  <line x1="360" y1="255" x2="195" y2="340" stroke="white" stroke-width="1" opacity="0.25"/>
+  <line x1="440" y1="255" x2="605" y2="340" stroke="white" stroke-width="1" opacity="0.25"/>
+  <line x1="355" y1="230" x2="110" y2="225" stroke="#29ABE2" stroke-width="1" opacity="0.2"/>
+  <line x1="445" y1="230" x2="690" y2="225" stroke="#29ABE2" stroke-width="1" opacity="0.2"/>
+
+  <!-- Data pulse dots on connections -->
+  <circle cx="300" cy="170" r="3" fill="#29ABE2" opacity="0.7"/>
+  <circle cx="500" cy="170" r="3" fill="#29ABE2" opacity="0.7"/>
+  <circle cx="270" cy="290" r="3" fill="white" opacity="0.4"/>
+  <circle cx="530" cy="290" r="3" fill="white" opacity="0.4"/>
+
+  <!-- Decorative corner elements -->
+  <path d="M 30 30 L 80 30 M 30 30 L 30 80" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 770 30 L 720 30 M 770 30 L 770 80" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 30 470 L 80 470 M 30 470 L 30 420" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 770 470 L 720 470 M 770 470 L 770 420" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Floating geometric accents -->
+  <circle cx="680" cy="80" r="20" fill="none" stroke="white" stroke-width="0.5" opacity="0.15"/>
+  <circle cx="680" cy="80" r="30" fill="none" stroke="white" stroke-width="0.3" opacity="0.1"/>
+  <circle cx="120" cy="430" r="15" fill="none" stroke="#29ABE2" stroke-width="0.5" opacity="0.2"/>
+  <circle cx="120" cy="430" r="25" fill="none" stroke="#29ABE2" stroke-width="0.3" opacity="0.15"/>
+
+  <!-- Small scattered dots -->
+  <circle cx="300" cy="80" r="2" fill="white" opacity="0.15"/>
+  <circle cx="500" cy="420" r="2" fill="white" opacity="0.15"/>
+  <circle cx="650" cy="400" r="1.5" fill="#29ABE2" opacity="0.3"/>
+  <circle cx="150" cy="150" r="1.5" fill="#29ABE2" opacity="0.3"/>
+</svg>

@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <pattern id="web-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1a2a44" stroke-width="0.3"/>
+    </pattern>
+    <radialGradient id="web-glow" cx="45%" cy="48%" r="50%">
+      <stop offset="0%" stop-color="#162545"/>
+      <stop offset="100%" stop-color="#0A1628"/>
+    </radialGradient>
+    <linearGradient id="web-screen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#152240"/>
+      <stop offset="100%" stop-color="#0d1a30"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#0A1628"/>
+  <rect width="800" height="500" fill="url(#web-glow)"/>
+  <rect width="800" height="500" fill="url(#web-grid)" opacity="0.4"/>
+
+  <!-- Browser window frame -->
+  <rect x="170" y="80" width="460" height="320" rx="8" fill="none" stroke="white" stroke-width="2" opacity="0.3"/>
+  <rect x="170" y="80" width="460" height="35" rx="8" fill="white" opacity="0.05"/>
+  <!-- Flat bottom on title bar -->
+  <rect x="170" y="100" width="460" height="15" fill="white" opacity="0.05"/>
+
+  <!-- Browser dots -->
+  <circle cx="195" cy="97" r="5" fill="#29ABE2" opacity="0.6"/>
+  <circle cx="215" cy="97" r="5" fill="white" opacity="0.15"/>
+  <circle cx="235" cy="97" r="5" fill="white" opacity="0.15"/>
+
+  <!-- URL bar -->
+  <rect x="260" y="89" width="340" height="16" rx="8" fill="white" opacity="0.06"/>
+  <line x1="275" y1="97" x2="365" y2="97" stroke="white" stroke-width="1" opacity="0.15"/>
+
+  <!-- Browser content area -->
+  <rect x="175" y="118" width="450" height="278" fill="url(#web-screen)" opacity="0.5"/>
+
+  <!-- Content mockup - header -->
+  <rect x="195" y="135" width="160" height="12" rx="2" fill="white" opacity="0.15"/>
+  <rect x="195" y="155" width="280" height="6" rx="1" fill="white" opacity="0.07"/>
+  <rect x="195" y="167" width="240" height="6" rx="1" fill="white" opacity="0.05"/>
+
+  <!-- Content mockup - hero image placeholder -->
+  <rect x="195" y="190" width="200" height="120" rx="4" fill="#29ABE2" opacity="0.08"/>
+  <rect x="195" y="190" width="200" height="120" rx="4" fill="none" stroke="#29ABE2" stroke-width="1" opacity="0.25"/>
+  <!-- Diagonal cross in image placeholder -->
+  <line x1="195" y1="190" x2="395" y2="310" stroke="#29ABE2" stroke-width="0.5" opacity="0.15"/>
+  <line x1="395" y1="190" x2="195" y2="310" stroke="#29ABE2" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Content mockup - sidebar text blocks -->
+  <rect x="415" y="190" width="190" height="8" rx="1" fill="white" opacity="0.1"/>
+  <rect x="415" y="207" width="170" height="6" rx="1" fill="white" opacity="0.06"/>
+  <rect x="415" y="220" width="180" height="6" rx="1" fill="white" opacity="0.06"/>
+  <rect x="415" y="233" width="150" height="6" rx="1" fill="white" opacity="0.06"/>
+
+  <!-- Content mockup - button -->
+  <rect x="415" y="255" width="90" height="24" rx="4" fill="#29ABE2" opacity="0.3"/>
+  <rect x="425" y="264" width="50" height="6" rx="1" fill="white" opacity="0.3"/>
+
+  <!-- Content mockup - footer cards -->
+  <rect x="195" y="330" width="130" height="50" rx="3" fill="white" opacity="0.04"/>
+  <rect x="340" y="330" width="130" height="50" rx="3" fill="white" opacity="0.04"/>
+  <rect x="485" y="330" width="120" height="50" rx="3" fill="white" opacity="0.04"/>
+
+  <!-- Code bracket decorations floating around browser -->
+  <!-- Left bracket < -->
+  <text x="110" y="220" font-family="monospace" font-size="40" fill="#29ABE2" opacity="0.2">&lt;</text>
+  <text x="100" y="270" font-family="monospace" font-size="28" fill="white" opacity="0.1">/&gt;</text>
+
+  <!-- Right bracket > -->
+  <text x="660" y="200" font-family="monospace" font-size="28" fill="white" opacity="0.1">&lt;/</text>
+  <text x="665" y="250" font-family="monospace" font-size="40" fill="#29ABE2" opacity="0.2">&gt;</text>
+
+  <!-- Floating code lines -->
+  <g opacity="0.08">
+    <rect x="80" y="340" width="60" height="4" rx="1" fill="white"/>
+    <rect x="85" y="350" width="45" height="4" rx="1" fill="#29ABE2"/>
+    <rect x="85" y="360" width="55" height="4" rx="1" fill="white"/>
+    <rect x="80" y="370" width="40" height="4" rx="1" fill="white"/>
+  </g>
+
+  <g opacity="0.08">
+    <rect x="660" y="340" width="60" height="4" rx="1" fill="white"/>
+    <rect x="665" y="350" width="50" height="4" rx="1" fill="white"/>
+    <rect x="665" y="360" width="40" height="4" rx="1" fill="#29ABE2"/>
+    <rect x="660" y="370" width="55" height="4" rx="1" fill="white"/>
+  </g>
+
+  <!-- Cursor arrow -->
+  <path d="M 480 295 L 480 320 L 490 313 L 497 328 L 503 325 L 496 310 L 505 310 Z" fill="white" opacity="0.25"/>
+
+  <!-- Responsive breakpoint indicators -->
+  <rect x="200" y="420" width="40" height="30" rx="2" fill="none" stroke="white" stroke-width="0.8" opacity="0.12"/>
+  <rect x="260" y="415" width="55" height="35" rx="2" fill="none" stroke="white" stroke-width="0.8" opacity="0.12"/>
+  <rect x="335" y="410" width="80" height="40" rx="3" fill="none" stroke="#29ABE2" stroke-width="1" opacity="0.15"/>
+
+  <!-- Decorative corner brackets -->
+  <path d="M 30 30 L 80 30 M 30 30 L 30 80" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 770 30 L 720 30 M 770 30 L 770 80" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 30 470 L 80 470 M 30 470 L 30 420" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 770 470 L 720 470 M 770 470 L 770 420" stroke="#29ABE2" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Ambient particles -->
+  <circle cx="130" cy="80" r="1.5" fill="white" opacity="0.1"/>
+  <circle cx="700" cy="450" r="2" fill="#29ABE2" opacity="0.2"/>
+  <circle cx="60" cy="450" r="1.5" fill="#29ABE2" opacity="0.15"/>
+  <circle cx="740" cy="80" r="1.5" fill="white" opacity="0.1"/>
+</svg>
