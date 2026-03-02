@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   title: "CJ Technology | IT Solutions & Consulting in New Jersey",
   description:
     "CJ Technology is an IT consulting and solutions provider serving mid-size and enterprise businesses since 2005. Network management, cloud services, Microsoft 365, and more.",
+  icons: {
+    icon: "/img/cjt-favicon.png",
+    apple: "/img/cjt-favicon.png",
+  },
   openGraph: {
     title: "CJ Technology | IT Solutions & Consulting in New Jersey",
     description:
