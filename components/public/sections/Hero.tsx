@@ -7,7 +7,7 @@ import { HeroBackground } from "@/components/public/HeroBackground";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[75vh] flex items-center overflow-hidden">
       <HeroBackground />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-32 w-full">
@@ -100,6 +100,25 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="flex flex-col items-center gap-2"
+          >
+            <span className="text-[10px] uppercase tracking-[0.25em] text-white/30 font-medium">
+              Scroll
+            </span>
+            <div className="w-px h-8 bg-gradient-to-b from-white/40 to-transparent" />
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
