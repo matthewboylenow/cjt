@@ -1,19 +1,19 @@
 import { HeroSection } from "@/components/public/sections/Hero";
+import { PainPoints } from "@/components/public/sections/PainPoints";
 import { SolutionsPreview } from "@/components/public/sections/SolutionsPreview";
-import { StatsBar } from "@/components/public/sections/StatsBar";
+import { TrustSignals } from "@/components/public/sections/TrustSignals";
 import { TestimonialsSection } from "@/components/public/sections/Testimonials";
-import { AboutBrief } from "@/components/public/sections/AboutBrief";
-import { CTABand } from "@/components/public/sections/CTABand";
+import { HomeCTA } from "@/components/public/sections/HomeCTA";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <PainPoints />
       <SolutionsPreview />
-      <StatsBar />
+      <TrustSignals />
       <TestimonialsSection />
-      <AboutBrief />
-      <CTABand />
+      <HomeCTA />
     </>
   );
 }

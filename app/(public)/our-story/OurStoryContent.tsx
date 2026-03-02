@@ -1,85 +1,119 @@
 "use client";
 
-import { PageHero } from "@/components/public/PageHero";
+import Image from "next/image";
 import { FadeIn } from "@/components/public/FadeIn";
-import { CTABand } from "@/components/public/sections/CTABand";
-
-const sections = [
-  {
-    title: "Our Story",
-    paragraphs: [
-      "CJ Technology is an IT consulting and solutions provider that brings together industry-leading service at a competitive price. Our bottom line is to deliver solutions that meet your unique business requirements. Our services range from PC network support, voice, AV and IT product sales.",
-      "President of CJ Technology, Joe Kreher, has been in the IT industry since 2000. He started his consulting company in 2005 and has been growing since.",
-    ],
-  },
-  {
-    title: "Our Team",
-    paragraphs: [
-      "It is our belief that a company is only as good as the people who represent it. Our team is made up of experienced and educated IT personnel with diverse skill sets.",
-      "All of our specialized teams spend time reviewing each client's particular business situation to identify possible improvements and recommendations. Because of this, a diverse and highly skilled team will look at your business needs from varying perspectives.",
-    ],
-  },
-  {
-    title: "Our Promise To You",
-    paragraphs: [
-      "Whether you're a new or existing customer of ours, you already know that we provide you with top of the line, dependable service. We know not everything in your business or in life runs smoothly, and we pride ourselves on meeting every customer's need, no matter how big or small.",
-      "Whether you need a box of toner delivered overnight, or a full network or website overhaul, we are ready and capable to meet your needs.",
-    ],
-  },
-];
+import { OurStoryCTA } from "@/components/public/sections/OurStoryCTA";
 
 export function OurStoryContent() {
   return (
     <>
-      <PageHero
-        overline="Who We Are"
-        title="Our Story"
-        subtitle="Industry-leading IT service at a competitive price since 2005."
-      />
+      {/* Custom Hero — navy with bronze gradient */}
+      <section className="relative py-28 lg:py-36 bg-brand-navy overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-navy to-brand-bronze-dark/20" />
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-brand-bronze-light mb-4">
+              Est. 2005 | Iselin, NJ
+            </p>
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-[1.1] tracking-[-0.02em] max-w-3xl">
+              IT consulting built around mid-size businesses
+            </h1>
+          </FadeIn>
+        </div>
+      </section>
 
+      {/* Section 1: The Short Version */}
       <section className="py-20 lg:py-28 bg-surface-warm">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8">
-          {sections.map((section, index) => (
-            <FadeIn key={section.title} delay={index * 0.1}>
-              <div className={index > 0 ? "mt-16" : ""}>
-                {index > 0 && (
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="h-px flex-1 bg-surface-mist" />
-                    <div className="w-2 h-2 rounded-full bg-brand-cyan" />
-                    <div className="h-px flex-1 bg-surface-mist" />
-                  </div>
-                )}
-
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div>
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-brand-bronze mb-4">
+                  The Short Version
+                </p>
                 <h2 className="font-heading text-2xl md:text-3xl font-bold text-brand-navy tracking-[-0.01em] mb-6">
-                  {section.title}
+                  How CJ Technology got started
                 </h2>
-                {section.paragraphs.map((paragraph, i) => (
-                  <p
-                    key={i}
-                    className="text-lg text-text-secondary leading-relaxed mb-4 last:mb-0"
-                  >
-                    {paragraph}
-                  </p>
-                ))}
+                <p className="text-lg text-text-secondary leading-relaxed mb-4">
+                  Joe Kreher has been in the IT industry since 2000. He started CJ Technology in 2005
+                  because he saw mid-size companies getting inconsistent service from larger providers.
+                </p>
+                <p className="text-lg text-text-secondary leading-relaxed">
+                  CJT was built to focus on that segment. We keep our client list manageable so we can
+                  learn each company&apos;s systems and respond quickly when something goes wrong.
+                </p>
               </div>
-            </FadeIn>
-          ))}
+              <div className="hidden lg:flex justify-center">
+                <Image
+                  src="/img/co-working.svg"
+                  alt="Team collaboration illustration"
+                  width={420}
+                  height={350}
+                  className="w-full max-w-sm"
+                />
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
 
-          <FadeIn delay={0.3}>
-            <blockquote className="mt-16 border-l-4 border-brand-cyan pl-6 py-2">
-              <p className="text-xl italic text-brand-navy font-heading">
-                &ldquo;We pride ourselves on meeting every customer&apos;s need,
-                no matter how big or small.&rdquo;
+      {/* Section 2: Our Team */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className="hidden lg:flex justify-center order-1">
+                <Image
+                  src="/img/connected.svg"
+                  alt="Connected team illustration"
+                  width={380}
+                  height={320}
+                  className="w-full max-w-xs"
+                />
+              </div>
+              <div className="order-2">
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-brand-bronze mb-4">
+                  Our Team
+                </p>
+                <h2 className="font-heading text-2xl md:text-3xl font-bold text-brand-navy tracking-[-0.01em] mb-6">
+                  In-house team with diverse skill sets
+                </h2>
+                <p className="text-lg text-text-secondary leading-relaxed mb-4">
+                  All of our technicians are in-house employees with experience across
+                  networking, cloud, cabling, and security. No outsourcing, no call centers.
+                </p>
+                <p className="text-lg text-text-secondary leading-relaxed">
+                  Multiple specialists review each client&apos;s setup, which helps us catch issues
+                  from different angles and make better recommendations.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Section 3: Our Promise */}
+      <section className="py-20 lg:py-28 bg-surface-cyan-tint">
+        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-brand-bronze mb-4 text-center">
+              Our Promise
+            </p>
+            <blockquote className="border-l-[8px] border-brand-bronze pl-8 py-4">
+              <p className="text-2xl md:text-3xl font-heading font-bold text-brand-navy leading-snug">
+                Whether you need a box of toner delivered overnight or a full network overhaul,
+                we are ready. We pride ourselves on meeting every customer&apos;s need, no matter
+                how big or small.
               </p>
-              <cite className="block mt-3 text-sm text-text-secondary not-italic">
-                CJ Technology
+              <cite className="block mt-6 text-sm text-text-secondary not-italic font-medium">
+                Joe Kreher, President of CJ Technology
               </cite>
             </blockquote>
           </FadeIn>
         </div>
       </section>
 
-      <CTABand />
+      <OurStoryCTA />
     </>
   );
 }

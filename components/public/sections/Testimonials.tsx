@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeIn } from "@/components/public/FadeIn";
 
@@ -35,7 +36,19 @@ export function TestimonialsSection() {
     );
 
   return (
-    <section className="relative py-24 lg:py-32 bg-surface-warm overflow-hidden">
+    <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
+      {/* Background illustration */}
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 opacity-[0.06] pointer-events-none hidden lg:block">
+        <Image
+          src="/img/connected.svg"
+          alt=""
+          width={500}
+          height={500}
+          className="w-[500px] h-auto"
+          aria-hidden="true"
+        />
+      </div>
+
       <div className="absolute top-16 left-8 text-[200px] font-heading font-bold text-surface-mist/50 leading-none select-none pointer-events-none">
         &ldquo;
       </div>
@@ -46,7 +59,7 @@ export function TestimonialsSection() {
             Client Testimonials
           </p>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy tracking-[-0.015em]">
-            What Our Customers Are Saying
+            What our clients say
           </h2>
         </FadeIn>
 
