@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function HeroBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy" />
+      <div className="absolute inset-0 bg-brand-navy" />
 
       {/* Topographic contour lines */}
       <svg

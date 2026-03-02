@@ -92,27 +92,6 @@ export function OurStoryContent() {
         </div>
       </section>
 
-      {/* Section 3: Our Promise */}
-      <section className="py-20 lg:py-28 bg-surface-cyan-tint">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8">
-          <FadeIn>
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-brand-bronze mb-4 text-center">
-              Our Promise
-            </p>
-            <blockquote className="border-l-[8px] border-brand-bronze pl-8 py-4">
-              <p className="text-2xl md:text-3xl font-heading font-bold text-brand-navy leading-snug">
-                Whether you need a box of toner delivered overnight or a full network overhaul,
-                we are ready. We pride ourselves on meeting every customer&apos;s need, no matter
-                how big or small.
-              </p>
-              <cite className="block mt-6 text-sm text-text-secondary not-italic font-medium">
-                Joe Kreher, President of CJ Technology
-              </cite>
-            </blockquote>
-          </FadeIn>
-        </div>
-      </section>
-
       <OurStoryCTA />
     </>
   );
