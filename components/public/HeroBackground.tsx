@@ -41,8 +41,6 @@ export function HeroBackground() {
         className="absolute top-[15%] right-[12%] w-16 h-16 bg-white/5 rotate-45"
       />
 
-      {/* Bottom fade to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-surface-warm to-transparent" />
     </div>
   );
 }
