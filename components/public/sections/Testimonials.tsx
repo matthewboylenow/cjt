@@ -14,12 +14,6 @@ const testimonials = [
   },
   {
     quote:
-      "We were in need of a server and network upgrade and hired CJ Technology to take care of everything for us, including working with our software vendor for our specialized software. I couldn't ask for a smoother transition along with excellent monthly support.",
-    author: "Steven Freeman",
-    company: "Iselin Fire Department",
-  },
-  {
-    quote:
       "We were in need of a website overhaul and hired CJ Technology. They were able to deliver us excellent feedback and mock designs of what our website would look like and once we approved it, they were able to build us a great website.",
     author: "Pete Fiorini",
     company: "Percario Law",

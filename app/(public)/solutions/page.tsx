@@ -37,12 +37,14 @@ const solutionsData = [
     painLine: "Professional websites through our partner agency, Adventii Media.",
     body: "Are you frustrated that your website isn't generating you leads? Are leads slipping through the cracks? We've partnered with Adventii Media, a NJ-based website design and development agency that works with medium- and enterprise-level businesses to showcase your brand's online presence, converting your visitors into customers and brand advocates.",
     image: "/img/programming.svg",
+    link: { label: "Visit Adventii Media", href: "https://adventii.media" },
   },
   {
     heading: "Social Media & Digital Marketing",
     painLine: "Content strategy, social media, and digital advertising.",
     body: "From strategic content creation and campaign management to data-driven advertising and performance tracking, our social media and digital marketing expert, Makayla, can build experiences that empower your brand's digital presence.\n\nThrough a thoughtful blend of creative storytelling and analytics-driven strategies, Makayla captures attention, drives meaningful engagement and supports sustainable growth with measurable results.",
     image: "/img/developer-activity.svg",
+    link: { label: "View Makayla's Portfolio", href: "https://maksdigitalportfolio.my.canva.site/makayla-kreher-portfolio" },
   },
 ];
 

@@ -15,8 +15,8 @@ export function HomeCTA() {
             Need help with your IT?
           </h2>
           <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
-            Send us a message or give us a call. We&apos;ll get back to you
-            within one business day.
+            Send us a message and we&apos;ll get back to you within one
+            business day.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -25,12 +25,6 @@ export function HomeCTA() {
             >
               Get In Touch
             </Link>
-            <a
-              href="tel:8772275435"
-              className="inline-flex items-center justify-center rounded-lg border-2 border-brand-bronze/40 px-8 py-4 text-base font-semibold text-brand-bronze-light transition-all duration-200 hover:bg-brand-bronze/10 hover:border-brand-bronze/60"
-            >
-              Or call now: 877.227.5435
-            </a>
           </div>
         </FadeIn>
       </div>

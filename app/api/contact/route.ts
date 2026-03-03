@@ -8,6 +8,12 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
+    // Honeypot check — if _hp field is filled, it's a bot
+    if (body._hp) {
+      // Return success to not tip off the bot
+      return NextResponse.json({ success: true });
+    }
+
     const parsed = contactFormSchema.safeParse(body);
     if (!parsed.success) {
       return NextResponse.json(

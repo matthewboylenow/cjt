@@ -32,6 +32,7 @@ export function ContactContent() {
     itFrustration: "",
     message: "",
   });
+  const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
@@ -54,13 +55,20 @@ export function ContactContent() {
       return;
     }
     setErrors({});
+
+    // Honeypot check — bots fill this in, humans don't see it
+    if (honeypot) {
+      setStatus("success");
+      return;
+    }
+
     setStatus("submitting");
 
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, _hp: honeypot }),
       });
 
       if (!res.ok) throw new Error("Submission failed");
@@ -115,15 +123,9 @@ export function ContactContent() {
               Contact Us
             </h1>
             <p className="mt-6 text-lg text-text-secondary max-w-xl leading-relaxed">
-              Fill out the form below or give us a call. We typically respond
+              Fill out the form below and we&apos;ll get back to you. We typically respond
               within one business day.
             </p>
-            <a
-              href="tel:8772275435"
-              className="inline-block mt-6 font-heading text-3xl md:text-4xl font-bold text-brand-navy hover:text-brand-cyan transition-colors"
-            >
-              877.227.5435
-            </a>
           </FadeIn>
         </div>
       </section>
@@ -134,12 +136,6 @@ export function ContactContent() {
           {/* Contact info strip */}
           <FadeIn className="mb-12">
             <div className="bg-brand-navy rounded-xl px-8 py-5 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-white">
-              <a href="tel:8772275435" className="flex items-center gap-3 hover:text-brand-cyan transition-colors">
-                <svg className="w-5 h-5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span className="text-sm font-medium">877.227.5435</span>
-              </a>
               <a href="mailto:info@cjtechnology.com" className="flex items-center gap-3 hover:text-brand-cyan transition-colors">
                 <svg className="w-5 h-5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -201,6 +197,20 @@ export function ContactContent() {
                     onSubmit={handleSubmit}
                     className="bg-surface-warm rounded-2xl p-8 md:p-10 shadow-sm space-y-6"
                   >
+                    {/* Honeypot — invisible to humans, bots fill it in */}
+                    <div className="absolute opacity-0 -z-10 h-0 overflow-hidden" aria-hidden="true">
+                      <label htmlFor="website">Website</label>
+                      <input
+                        type="text"
+                        id="website"
+                        name="website"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </div>
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-medium text-text-primary mb-2">
@@ -361,8 +371,8 @@ export function ContactContent() {
 
                       {status === "error" && (
                         <p className="mt-3 text-sm text-red-500">
-                          Something went wrong. Please try again or call us
-                          directly.
+                          Something went wrong. Please try again or email us
+                          at info@cjtechnology.com.
                         </p>
                       )}
                     </div>

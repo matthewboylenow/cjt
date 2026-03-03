@@ -212,22 +212,14 @@ async function seed() {
       },
       {
         quote:
-          "We were in need of a server and network upgrade and hired CJ Technology to take care of everything for us, including working with our software vendor for our specialized software. I couldn't ask for a smoother transition along with excellent monthly support.",
-        authorName: "Steven Freeman",
-        companyName: "Iselin Fire Department",
-        sortOrder: 1,
-        isActive: true,
-      },
-      {
-        quote:
           "We were in need of a website overhaul and hired CJ Technology. They were able to deliver us excellent feedback and mock designs of what our website would look like and once we approved it, they were able to build us a great website.",
         authorName: "Pete Fiorini",
         companyName: "Percario Law",
-        sortOrder: 2,
+        sortOrder: 1,
         isActive: true,
       },
     ]);
-    console.log("✅ 3 testimonials seeded.");
+    console.log("✅ 2 testimonials seeded.");
   } else {
     console.log("⏭️  Testimonials already exist, skipping.");
   }

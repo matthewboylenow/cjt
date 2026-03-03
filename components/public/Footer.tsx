@@ -53,33 +53,6 @@ export function Footer() {
             </h4>
             <ul className="space-y-3 text-sm text-white/70">
               <li>
-                <span className="text-white/40 text-xs block mb-1">
-                  Toll Free
-                </span>
-                <a
-                  href="tel:8772275435"
-                  className="hover:text-white transition-colors"
-                >
-                  877.227.5435
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:7327505077"
-                  className="hover:text-white transition-colors"
-                >
-                  732.750.5077
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:7327508820"
-                  className="hover:text-white transition-colors"
-                >
-                  732.750.8820
-                </a>
-              </li>
-              <li>
                 <a
                   href="mailto:info@cjtechnology.com"
                   className="hover:text-white transition-colors"

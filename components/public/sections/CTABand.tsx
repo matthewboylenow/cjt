@@ -18,7 +18,7 @@ export function CTABand() {
           </h2>
           <p className="mt-4 text-lg text-white/80 max-w-xl mx-auto">
             Curious? Contact us to learn more about how we can help your
-            business. Fill out a form or give us a call.
+            business.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -27,12 +27,6 @@ export function CTABand() {
             >
               Contact Us Today
             </Link>
-            <a
-              href="tel:8772275435"
-              className="inline-flex items-center justify-center rounded-lg border-2 border-white/30 px-8 py-4 text-base font-semibold text-white transition-all duration-200 hover:bg-white/10 hover:border-white/60"
-            >
-              Call 877.227.5435
-            </a>
           </div>
         </FadeIn>
       </div>
