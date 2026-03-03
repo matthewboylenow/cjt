@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
 import { db } from "@/db";
 import { solutions } from "@/db/schema";
@@ -25,7 +26,7 @@ export async function POST(request: Request) {
   }
 
   const body = await request.json();
-  const { heading, body: content, imageUrl } = body;
+  const { heading, body: content, imageUrl, excerpt, linkLabel, linkHref } = body;
 
   if (!heading || !content) {
     return NextResponse.json(
@@ -48,12 +49,18 @@ export async function POST(request: Request) {
     .insert(solutions)
     .values({
       heading,
+      excerpt: excerpt || null,
       body: content,
       imageUrl: imageUrl || null,
+      linkLabel: linkLabel || null,
+      linkHref: linkHref || null,
       sortOrder: nextOrder,
       isActive: true,
     })
     .returning();
+
+  revalidatePath("/solutions");
+  revalidatePath("/");
 
   return NextResponse.json(created, { status: 201 });
 }

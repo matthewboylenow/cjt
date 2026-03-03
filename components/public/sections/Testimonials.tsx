@@ -5,23 +5,20 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeIn } from "@/components/public/FadeIn";
 
-const testimonials = [
-  {
-    quote:
-      "As a start-up company in 2005, we put our trust in CJ Technology to set up our firm with systems that were financially responsible to our cash flow, but equally responsible to our technology requirements and growth potential. CJT has responded to all of our needs over the years and have become our only source for technology.",
-    author: "Steve Mellett",
-    company: "Vericon Construction",
-  },
-  {
-    quote:
-      "We were in need of a website overhaul and hired CJ Technology. They were able to deliver us excellent feedback and mock designs of what our website would look like and once we approved it, they were able to build us a great website.",
-    author: "Pete Fiorini",
-    company: "Percario Law",
-  },
-];
+interface Testimonial {
+  quote: string;
+  author: string;
+  company: string;
+}
 
-export function TestimonialsSection() {
+export function TestimonialsSection({
+  testimonials,
+}: {
+  testimonials: Testimonial[];
+}) {
   const [current, setCurrent] = useState(0);
+
+  if (testimonials.length === 0) return null;
 
   const next = () => setCurrent((prev) => (prev + 1) % testimonials.length);
   const prev = () =>

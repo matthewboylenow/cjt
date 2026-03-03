@@ -3,13 +3,15 @@
 import Image from "next/image";
 import { FadeIn } from "@/components/public/FadeIn";
 import { SolutionsCTA } from "@/components/public/sections/SolutionsCTA";
+import { TiptapRenderer } from "@/components/tiptap/Renderer";
 
 interface Solution {
   heading: string;
-  painLine: string;
-  body: string;
-  image: string;
-  link?: { label: string; href: string };
+  excerpt: string;
+  body: unknown;
+  imageUrl: string;
+  linkLabel: string | null;
+  linkHref: string | null;
 }
 
 export function SolutionsContent({
@@ -67,7 +69,7 @@ export function SolutionsContent({
                   <div className="w-full lg:w-1/2">
                     <div className="flex justify-center">
                       <Image
-                        src={solution.image}
+                        src={solution.imageUrl}
                         alt={solution.heading}
                         width={400}
                         height={320}
@@ -88,24 +90,17 @@ export function SolutionsContent({
                       {solution.heading}
                     </h2>
                     <p className="text-brand-bronze font-medium mb-4 italic">
-                      {solution.painLine}
+                      {solution.excerpt}
                     </p>
-                    {solution.body.split("\n\n").map((paragraph, i) => (
-                      <p
-                        key={i}
-                        className="text-text-secondary leading-relaxed mb-4 last:mb-0"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                    {solution.link && (
+                    <TiptapRenderer content={solution.body} className="solutions-body" />
+                    {solution.linkLabel && solution.linkHref && (
                       <a
-                        href={solution.link.href}
+                        href={solution.linkHref}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 mt-2 text-brand-cyan font-semibold hover:text-brand-navy transition-colors"
                       >
-                        {solution.link.label}
+                        {solution.linkLabel}
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>

@@ -11,7 +11,13 @@ const extensions = [
   TextAlign.configure({ types: ["heading", "paragraph"] }),
 ];
 
-export function TiptapRenderer({ content }: { content: unknown }) {
+export function TiptapRenderer({
+  content,
+  className,
+}: {
+  content: unknown;
+  className?: string;
+}) {
   if (!content) return null;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -19,7 +25,7 @@ export function TiptapRenderer({ content }: { content: unknown }) {
 
   return (
     <div
-      className="prose-cjt"
+      className={`prose-cjt ${className ?? ""}`}
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );

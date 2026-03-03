@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
 import { db } from "@/db";
 import { testimonials } from "@/db/schema";
@@ -53,6 +54,8 @@ export async function POST(request: Request) {
       isActive: true,
     })
     .returning();
+
+  revalidatePath("/");
 
   return NextResponse.json(created, { status: 201 });
 }

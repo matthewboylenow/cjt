@@ -13,8 +13,11 @@ const emptyDoc = {
 export default function NewSolutionPage() {
   const router = useRouter();
   const [heading, setHeading] = useState("");
+  const [excerpt, setExcerpt] = useState("");
   const [body, setBody] = useState<unknown>(emptyDoc);
   const [imageUrl, setImageUrl] = useState("");
+  const [linkLabel, setLinkLabel] = useState("");
+  const [linkHref, setLinkHref] = useState("");
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
 
@@ -31,7 +34,14 @@ export default function NewSolutionPage() {
     const res = await fetch("/api/admin/solutions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ heading, body, imageUrl: imageUrl || null }),
+      body: JSON.stringify({
+        heading,
+        excerpt: excerpt || null,
+        body,
+        imageUrl: imageUrl || null,
+        linkLabel: linkLabel || null,
+        linkHref: linkHref || null,
+      }),
     });
 
     if (res.ok) {
@@ -76,6 +86,21 @@ export default function NewSolutionPage() {
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1.5">
+            Excerpt
+          </label>
+          <p className="text-xs text-gray-500 mb-1">Short description shown on homepage and solutions page</p>
+          <textarea
+            value={excerpt}
+            onChange={(e) => setExcerpt(e.target.value)}
+            rows={2}
+            maxLength={500}
+            className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-cyan focus:border-transparent resize-none"
+            placeholder="e.g. Servers, workstations, security patches, and uptime monitoring."
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1.5">
             Image
           </label>
           <ImageUpload currentUrl={null} onUploadComplete={setImageUrl} />
@@ -90,6 +115,33 @@ export default function NewSolutionPage() {
             onChange={setBody}
             placeholder="Describe this solution..."
           />
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">
+              Link Label
+            </label>
+            <input
+              type="text"
+              value={linkLabel}
+              onChange={(e) => setLinkLabel(e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-cyan focus:border-transparent"
+              placeholder="e.g. Visit Partner Site"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">
+              Link URL
+            </label>
+            <input
+              type="text"
+              value={linkHref}
+              onChange={(e) => setLinkHref(e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-cyan focus:border-transparent"
+              placeholder="https://example.com"
+            />
+          </div>
         </div>
 
         {error && (

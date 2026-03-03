@@ -162,3 +162,11 @@
 .prose-cjt u {
   @apply underline;
 }
+
+/* Solutions page body text — matches the original hardcoded styling */
+.prose-cjt.solutions-body p {
+  @apply text-text-secondary leading-relaxed mb-4;
+}
+.prose-cjt.solutions-body p:last-child {
+  @apply mb-0;
+}

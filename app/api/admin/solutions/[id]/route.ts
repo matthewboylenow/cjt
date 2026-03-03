@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
 import { db } from "@/db";
 import { solutions } from "@/db/schema";
@@ -37,13 +38,16 @@ export async function PUT(
 
   const { id } = await params;
   const body = await request.json();
-  const { heading, body: content, imageUrl, isActive } = body;
+  const { heading, body: content, imageUrl, isActive, excerpt, linkLabel, linkHref } = body;
 
   const updateData: Record<string, unknown> = { updatedAt: new Date() };
   if (heading !== undefined) updateData.heading = heading;
   if (content !== undefined) updateData.body = content;
   if (imageUrl !== undefined) updateData.imageUrl = imageUrl;
   if (isActive !== undefined) updateData.isActive = isActive;
+  if (excerpt !== undefined) updateData.excerpt = excerpt || null;
+  if (linkLabel !== undefined) updateData.linkLabel = linkLabel || null;
+  if (linkHref !== undefined) updateData.linkHref = linkHref || null;
 
   const [updated] = await db
     .update(solutions)
@@ -54,6 +58,9 @@ export async function PUT(
   if (!updated) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
+
+  revalidatePath("/solutions");
+  revalidatePath("/");
 
   return NextResponse.json(updated);
 }
@@ -76,6 +83,9 @@ export async function DELETE(
   if (!deleted) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
+
+  revalidatePath("/solutions");
+  revalidatePath("/");
 
   return NextResponse.json({ success: true });
 }

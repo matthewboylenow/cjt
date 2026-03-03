@@ -4,34 +4,16 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/public/FadeIn";
 
-const solutionPreviews = [
-  {
-    heading: "Network & Infrastructure",
-    excerpt: "Servers, workstations, security patches, and uptime monitoring.",
-  },
-  {
-    heading: "Structured Cabling",
-    excerpt: "Data, voice, and video cabling for new builds and existing offices.",
-  },
-  {
-    heading: "AWS Cloud Services",
-    excerpt: "Cloud backup, virtual servers, and remote workstations on AWS.",
-  },
-  {
-    heading: "Microsoft 365",
-    excerpt: "Email setup, migration, storage management, and ongoing support.",
-  },
-  {
-    heading: "Website Design",
-    excerpt: "Professional sites built to represent your business and convert visitors.",
-  },
-  {
-    heading: "Digital Marketing",
-    excerpt: "Content, campaigns, and analytics to grow your online presence.",
-  },
-];
+interface SolutionPreview {
+  heading: string;
+  excerpt: string;
+}
 
-export function SolutionsPreview() {
+export function SolutionsPreview({
+  solutions,
+}: {
+  solutions: SolutionPreview[];
+}) {
   return (
     <section className="relative py-24 lg:py-32 bg-surface-warm">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -45,7 +27,7 @@ export function SolutionsPreview() {
         </FadeIn>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {solutionPreviews.map((solution, index) => (
+          {solutions.map((solution, index) => (
             <StaggerItem key={solution.heading}>
               <motion.div
                 whileHover={{ y: -6, transition: { duration: 0.2 } }}

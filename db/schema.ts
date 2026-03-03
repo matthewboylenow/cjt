@@ -21,8 +21,11 @@ export const admins = pgTable("admins", {
 export const solutions = pgTable("solutions", {
   id: uuid("id").primaryKey().defaultRandom(),
   heading: varchar("heading", { length: 255 }).notNull(),
+  excerpt: varchar("excerpt", { length: 500 }),
   body: jsonb("body").notNull(),
   imageUrl: text("image_url"),
+  linkLabel: varchar("link_label", { length: 255 }),
+  linkHref: text("link_href"),
   sortOrder: integer("sort_order").notNull().default(0),
   isActive: boolean("is_active").default(true),
   createdAt: timestamp("created_at").defaultNow(),

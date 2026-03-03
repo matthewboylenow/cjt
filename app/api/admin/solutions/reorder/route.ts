@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
 import { db } from "@/db";
 import { solutions } from "@/db/schema";
@@ -27,6 +28,9 @@ export async function PUT(request: Request) {
         .where(eq(solutions.id, id))
     )
   );
+
+  revalidatePath("/solutions");
+  revalidatePath("/");
 
   return NextResponse.json({ success: true });
 }
